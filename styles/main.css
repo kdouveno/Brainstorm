@@ -1,0 +1,32 @@
+body{
+	margin: 0px;
+	
+}
+@font-face {
+	font-family: "test";
+	src: url("fonts/test.otf");
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: "test";
+	letter-spacing: 5px;
+}
+.upper_frame{
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+.upper_frame nav{
+	--nav_height: 50px;
+	height: var(--nav_height);
+	/* outline: 1px solid red; */
+	display: flex;
+}
+.upper_frame nav>div{
+	flex-grow: 1;
+}
+.upper_frame h2{
+	font-size: calc(var(--nav_height) / 2.6);
+}
+nav .socials{
+	padding: 10px 5px;
+}
