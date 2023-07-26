@@ -1,0 +1,9 @@
+@keyframes bs_upper_tornado_spin{
+	from{	transform: rotate(0deg);}
+	to{		transform: rotate(360deg);}
+}
+
+.bs_upper_tornado{
+	animation: bs_upper_tornado_spin 100s linear 0s infinite;
+	transform-origin: 620px 375px;
+}
