@@ -1,13 +1,30 @@
-function correct_scroll(){
-	let pf = document.getElementById("paralax_frame");
+nav = document.querySelectorAll(".mobile_nav h2");
+
+pf = document.getElementById("paralax_frame");
+
+function scrollTo(nbrPanel, a){
+	
+	pf.scrollTo({left: nbrPanel * window.innerWidth, behavior: a ? "instant" : "smooth"});
+	
+}
+let scrollDelay;
+function onScroll(a){
 	let scroll = pf.scrollLeft;
 	let ws = window.innerWidth;
 	if (!scroll)
 		return ;
-	pf.scrollTo({left: (((scroll + ws / 2) / ws) >> 0) * ws, behavior: "smooth"});
-}
-let scrollDelay;
-function onScroll(e){
+	let nbrPanel = ((scroll + ws / 2) / ws) >> 0;
 	clearTimeout(scrollDelay);
-	scrollDelay = setTimeout(correct_scroll, 200);
+	if (a) {
+		nav = document.querySelectorAll(".mobile_nav h2");
+		scrollTo(nbrPanel, true);
+	} else {
+		scrollDelay = setTimeout(scrollTo, 200, nbrPanel);
+		nav.forEach((o,i)=>{
+			if (i == nbrPanel)
+				o.classList.add("active");
+			else
+				o.classList.remove("active");
+		});
+	}
 }

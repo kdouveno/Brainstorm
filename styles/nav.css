@@ -1,0 +1,72 @@
+@font-face {
+	font-family: "test";
+	src: url("fonts/test.otf");
+}
+h1, h2, h3, h4, h5, h6{
+	font-family: "test";
+	letter-spacing: 5px;
+}
+.upper_frame{
+	height: 100vh;
+	background-color: black;
+	color: white;
+}
+.upper_frame nav{
+	height: var(--nav_height);
+	/* outline: 1px solid red; */
+	display: flex;
+}
+.upper_frame nav>div{
+	margin: 0px 10px
+}
+.upper_frame nav>.events{
+	flex-grow: 1;
+	/* display: none; */
+}
+
+.upper_frame h2{
+	font-size: calc(var(--nav_height) / 2.6);
+}
+nav .socials{
+	padding: 10px 5px;
+	/* display: none; */
+}
+@media screen and (max-width: 700px) {
+	.upper_frame nav>.socials{
+		display: none;
+	}
+}
+@media screen and (max-width: 600px) {
+	.upper_frame nav>.events{
+		display: none;
+	}
+	.upper_frame nav>.typo_logo{
+		margin-right: auto;
+	}
+}
+.mobile_nav{
+	display: flex;
+	justify-content: space-around;
+	width: 400vw;
+	transform: translateZ(-1.5px);
+	transform-style: preserve-3d;
+}
+.mobile_nav h2{
+	transform: scale(2.5);
+	font-weight: thin;
+	text-align: center;
+	color: grey;
+	transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+	transition-property: color transform;
+	filter: blur(2px);
+
+}
+.mobile_nav h2.active{
+	color: white;
+	transform: scale(2.5) translateZ(.5px);
+	filter: blur(0px);
+	z-index: 1;
+}
+.mobile_nav h2>span{
+	font-size: .7em;
+}

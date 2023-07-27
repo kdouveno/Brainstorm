@@ -1,36 +1,15 @@
 body{
 	margin: 0px;
 	overflow: hidden;
-	--nav_height: 50px;
+	--nav_height: 10vw;
 
 }
-@font-face {
-	font-family: "test";
-	src: url("fonts/test.otf");
+@media screen and (min-width: 500px) {
+	body{
+		--nav_height: 50px
+	}
 }
-h1, h2, h3, h4, h5, h6{
-	font-family: "test";
-	letter-spacing: 5px;
-}
-.upper_frame{
-	height: 100vh;
-	background-color: black;
-	color: white;
-}
-.upper_frame nav{
-	height: var(--nav_height);
-	/* outline: 1px solid red; */
-	display: flex;
-}
-.upper_frame nav>div{
-	flex-grow: 1;
-}
-.upper_frame h2{
-	font-size: calc(var(--nav_height) / 2.6);
-}
-nav .socials{
-	padding: 10px 5px;
-}
+
 #paralax_frame{
 	overflow-x: scroll;
 	overflow-y: hidden;
@@ -49,16 +28,7 @@ nav .socials{
 	perspective-origin: top;
 }
 
-.mobile_nav{
-	display: flex;
-	justify-content: space-around;
-	width: 400vw;
-	transform: translateZ(-1.5px);
-}
-.mobile_nav h2{
-	transform: scale(2.5);
 
-}
 .container{
 	display: flex;
 	height: calc(100% - var(--nav_height));
