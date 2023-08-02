@@ -32,6 +32,7 @@ body{
 .container{
 	display: flex;
 	height: calc(100% - var(--nav_height));
+	transform-style: preserve-3d;
 }
 .frame{
 	width: 100vw;

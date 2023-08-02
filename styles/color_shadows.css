@@ -1,42 +1,41 @@
 
 .logo_wrapper>svg:nth-child(2){
-	transform: translateZ(-.1px) scale(1.1);
+	transform: translate3D(0px, 0px, -.5px) scale(1.5);
 	fill: rgb(200, 0, 255);
 }
 .logo_wrapper>svg:nth-child(3){
-	transform: translateZ(-.2px) scale(1.2);
+	transform: translate3D(0px, 0px, -1px) scale(2);
 	fill: rgb(255 251 0);
 }
 .logo_wrapper>svg:nth-child(4){
-	transform: translateZ(-.3px) scale(1.3);
+	transform: translate3D(0px, 0px, -1.5px) scale(2.5);
 	fill: rgb(0, 255, 102);
 }
 @keyframes feur {
 	0%{
-		perspective-origin: 50%;
+		perspective-origin: 0;
 	}
 	100%{
-		perspective-origin: 500%;
+		perspective-origin: 10vw;
 	}
 }
 .logo_wrapper{
 	height: 150px;
 	width: 150px;
-	height: 200px;
-	width: 200px;
 	perspective: 1px;
-	transform-style: preserve-3d;
-	transition: perspective-origin 1s cubic-bezier(0.25, 1, 0.5, 1);
-	animation: feur 1s ease-in-out 0s;
-    perspective-origin: 500% 50%;
+	/* transition: perspective-origin 1s cubic-bezier(0.25, 1, 0.5, 1); */
+	/* transform-style: preserve-3d; */
+	/* animation: feur 1s ease-in-out 0s; */
     animation-iteration-count: infinite;
+	perspective-origin: 0vw;
 }
 .logo_wrapper>svg{
 	position: absolute;
 	left: 0px;
 	height: 100%;
 	width: 100%;
-	mix-blend-mode: hard-light;
+	/* mix-blend-mode: hard-light; */
 	fill:white;
+	transform-style: preserve-3d;
 
 }
