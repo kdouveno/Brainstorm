@@ -19,7 +19,7 @@ function onScroll(a){
 		nav = document.querySelectorAll(".mobile_nav h2");
 		scrollTo(nbrPanel, true);
 	} else {
-		scrollDelay = setTimeout(scrollTo, 200, nbrPanel);
+		scrollDelay = setTimeout(scrollTo, 50, nbrPanel);
 		nav.forEach((o,i)=>{
 			if (i == nbrPanel)
 				o.classList.add("active");
