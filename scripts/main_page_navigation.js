@@ -3,7 +3,8 @@ nav = document.querySelectorAll(".mobile_nav h2");
 pf = document.getElementById("paralax_frame");
 
 LWs = document.getElementsByClassName("logo_wrapper");
-lwsm = getLogoWrappersMeta();
+BIWs = document.getElementsByClassName("bg_img_wrapper");
+wsm = getWrappersMeta();
 
 function scrollTo(nbrPanel, a){
 	
@@ -36,22 +37,29 @@ function onResize(){
 	scrollTo(getNbrPanel(), true);
 }
 function scrollLogos(){
-	for  (const lw of LWs){
-		let co = lw.getBoundingClientRect().left + lwsm[lw].ro - window.innerWidth / 2;
-		lw.style.perspectiveOrigin = (-co + lwsm[lw].ro) + "px";
+	for  (const e of wsm){
+		let co = e[0].getBoundingClientRect().left + e[1].ro - window.innerWidth / 2;
+		e[0].style.perspectiveOrigin = (-co + e[1].ro) + "px";
 	}
 }
 function resizeLogos(){
-	getLogoWrappersMeta();
+	getWrappersMeta();
 }
-function getLogoWrappersMeta(){
-	let out = {};
+function getWrappersMeta(){
+	let out = new Map();
 	Array.from(LWs).forEach(o=>{
 		let re = o.getBoundingClientRect();
 		let ro = re.width / 2;
-			out[o] ={
+			out.set(o, {
 				ro: ro,
-			}
+			});
+	});
+	Array.from(BIWs).forEach(o=>{
+		let re = o.getBoundingClientRect();
+		let ro = re.width / 2;
+			out.set(o, {
+				ro: ro,
+			});
 	});
 	return out;
 }

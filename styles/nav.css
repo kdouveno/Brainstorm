@@ -47,7 +47,7 @@ nav .socials{
 .mobile_nav{
 	display: flex;
 	justify-content: space-around;
-	width: 400vw;
+	width: 600vw;
 	transform: translateZ(-1.5px);
 	transform-style: preserve-3d;
 }

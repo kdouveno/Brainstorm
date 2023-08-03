@@ -1,0 +1,14 @@
+.bg_img_wrapper{
+	position: absolute;
+	height: 100%;
+	text-align: center;
+	perspective: 1px;
+}
+.bg_img_wrapper>img{
+	display: inline-block;
+	height: 100%;
+	transform-style: preserve-3d;
+}
+.bg_img_wrapper>#bg_brainstorm{
+	transform: translateZ(-1px) scale(2.2);
+}

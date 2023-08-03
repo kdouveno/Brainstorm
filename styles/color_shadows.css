@@ -1,35 +1,26 @@
-
+.logo_wrapper>svg:first-child, .logo_wrapper>img:first-child{
+	z-index: 2;
+}
 .logo_wrapper>svg:nth-child(2){
-	transform: translate3D(0px, 0px, -.5px) scale(1.5);
+	transform: translate3D(62.3px, -67.1px, -.2px);
 	fill: rgb(200, 0, 255);
 }
 .logo_wrapper>svg:nth-child(3){
-	transform: translate3D(0px, 0px, -1px) scale(2);
+	transform: translate3D(123px, 92px, -.4px);
 	fill: rgb(255 251 0);
 }
 .logo_wrapper>svg:nth-child(4){
-	transform: translate3D(0px, 0px, -1.5px) scale(2.5);
+	transform: translate3D(-124px, 41px, -.6px);
 	fill: rgb(0, 255, 102);
-}
-@keyframes feur {
-	0%{
-		perspective-origin: 0;
-	}
-	100%{
-		perspective-origin: 10vw;
-	}
 }
 .logo_wrapper{
 	height: 150px;
 	width: 150px;
 	perspective: 1px;
-	/* transition: perspective-origin 1s cubic-bezier(0.25, 1, 0.5, 1); */
-	/* transform-style: preserve-3d; */
-	/* animation: feur 1s ease-in-out 0s; */
     animation-iteration-count: infinite;
 	perspective-origin: 0vw;
 }
-.logo_wrapper>svg{
+.logo_wrapper>svg, .logo_wrapper>img{
 	position: absolute;
 	left: 0px;
 	height: 100%;
@@ -37,5 +28,11 @@
 	/* mix-blend-mode: hard-light; */
 	fill:white;
 	transform-style: preserve-3d;
-
+	z-index: -1;
+}
+.logo_wrapper.big_one{
+	max-width: 300px;
+	max-height: 300px;
+	height: 80vw;
+	width: 80vw;
 }
