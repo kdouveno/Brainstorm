@@ -2,7 +2,7 @@
 	font-family: "test";
 	src: url("fonts/test.otf");
 }
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, nav{
 	font-family: "test";
 	letter-spacing: 5px;
 }
@@ -44,14 +44,15 @@ nav .socials{
 		margin-right: auto;
 	}
 }
-.mobile_nav{
+#mobile_nav{
 	display: flex;
 	justify-content: space-around;
-	width: 600vw;
-	transform: translateZ(-1.5px);
+	transform: translate3D(0, 5vh, -1.5px);
 	transform-style: preserve-3d;
+	position: absolute;
+	z-index: 2;
 }
-.mobile_nav h2{
+#mobile_nav div{
 	transform: scale(2.5);
 	font-weight: thin;
 	text-align: center;
@@ -59,14 +60,16 @@ nav .socials{
 	transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 	transition-property: color transform;
 	filter: blur(2px);
-
+	margin: 0px;
+	width: 100vw;
 }
-.mobile_nav h2.active{
+#mobile_nav div.active{
 	color: white;
 	transform: scale(2.5) translateZ(.5px);
 	filter: blur(0px);
 	z-index: 1;
 }
-.mobile_nav h2>span{
+#mobile_nav div>span{
 	font-size: .7em;
+	display: block;
 }

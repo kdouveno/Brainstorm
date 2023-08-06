@@ -1,18 +1,22 @@
-nav = document.querySelectorAll(".mobile_nav h2");
+setMobileTitles();
+
+nav = document.querySelectorAll("#mobile_nav div");
 
 pf = document.getElementById("paralax_frame");
 
 LWs = document.getElementsByClassName("logo_wrapper");
 BIWs = document.getElementsByClassName("bg_img_wrapper");
 wsm = getWrappersMeta();
+init();
 
 function scrollTo(nbrPanel, a){
 	
 	pf.scrollTo({left: nbrPanel * window.innerWidth, behavior: a ? "instant" : "smooth"});
 	
 }
+
 let scrollDelay;
-let getNbrPanel = ()=>((pf.scrollLeft + window.innerWidth / 2) / window.innerWidth) >> 0;
+function getNbrPanel() {return ((pf.scrollLeft + window.innerWidth / 2) / window.innerWidth) >> 0};
 let lastPanel;
 function onScroll(){
 	scrollLogos();
@@ -66,4 +70,32 @@ function getWrappersMeta(){
 function init(){
 	onResize();
 }
-init();
+
+function setMobileTitles(){
+	let titles = Array.from(document.querySelectorAll(".frame h2, .frame h3"));
+	let t = [];
+	titles.forEach((o)=>{
+		if (o.nodeName == "H2") {
+			t.unshift([o.innerText]);
+		} else if (o.nodeName == "H3"){
+			if (typeof(t[0][1]) === "undefined"){
+				t[0][1] = o.innerText;
+			} else {
+				t.unshift([t[0][0], o.innerText]);
+			}
+		}
+
+	});
+	t = t.map(o=>{
+		let out = document.createElement("div");
+		out.innerText = o[0];
+		if (!o[1])
+			return out;
+		let span = document.createElement("span");
+		span.innerText = o[1];
+		out.appendChild(span);
+		return out;
+	});
+	let mobileNav = document.getElementById("mobile_nav");
+	t.forEach(o=>{mobileNav.appendChild(o)});
+}
