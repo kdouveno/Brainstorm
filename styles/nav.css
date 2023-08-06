@@ -51,12 +51,12 @@ nav .socials{
 	transform-style: preserve-3d;
 	position: absolute;
 	z-index: 2;
+	transition: color .2s linear;
 }
 #mobile_nav div{
 	transform: scale(2.5);
 	font-weight: thin;
 	text-align: center;
-	color: grey;
 	transition: transform 0.2s cubic-bezier(0.45, 0, 0.55, 1);
 	transition-property: color transform;
 	filter: blur(2px);
@@ -64,7 +64,6 @@ nav .socials{
 	width: 100vw;
 }
 #mobile_nav div.active{
-	color: white;
 	transform: scale(2.5) translateZ(.5px);
 	filter: blur(0px);
 	z-index: 1;

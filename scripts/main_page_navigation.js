@@ -1,3 +1,4 @@
+var navColors;
 setMobileTitles();
 
 nav = document.querySelectorAll("#mobile_nav div");
@@ -7,6 +8,8 @@ pf = document.getElementById("paralax_frame");
 LWs = document.getElementsByClassName("logo_wrapper");
 BIWs = document.getElementsByClassName("bg_img_wrapper");
 wsm = getWrappersMeta();
+let scrollDelay;
+let lastPanel = -1;
 init();
 
 function scrollTo(nbrPanel, a){
@@ -15,18 +18,18 @@ function scrollTo(nbrPanel, a){
 	
 }
 
-let scrollDelay;
 function getNbrPanel() {return ((pf.scrollLeft + window.innerWidth / 2) / window.innerWidth) >> 0};
-let lastPanel;
 function onScroll(){
 	scrollLogos();
-	if (!pf.scrollLeft)
-		return ;
-	nbrPanel = getNbrPanel();
+	if (pf.scrollLeft)
+		nbrPanel = getNbrPanel();
+	else
+		nbrPanel = 0;
 	clearTimeout(scrollDelay);
 	scrollDelay = setTimeout(scrollTo, 50, nbrPanel);
 	if (nbrPanel == lastPanel)
 		return ;
+	document.getElementById("mobile_nav").style.color = navColors[nbrPanel];
 	lastPanel = nbrPanel;
 	nav.forEach((o,i)=>{
 		if (i == nbrPanel)
@@ -38,7 +41,7 @@ function onScroll(){
 }
 function onResize(){
 	resizeLogos();
-	scrollTo(getNbrPanel(), true);
+	onScroll();
 }
 function scrollLogos(){
 	for  (const e of wsm){
@@ -74,18 +77,22 @@ function init(){
 function setMobileTitles(){
 	let titles = Array.from(document.querySelectorAll(".frame h2, .frame h3"));
 	let t = [];
+	let out = [];
 	titles.forEach((o)=>{
 		if (o.nodeName == "H2") {
-			t.unshift([o.innerText]);
+			t.unshift([o.innerText, undefined]);
+			out.unshift(o.getAttribute("color"));
 		} else if (o.nodeName == "H3"){
 			if (typeof(t[0][1]) === "undefined"){
 				t[0][1] = o.innerText;
 			} else {
 				t.unshift([t[0][0], o.innerText]);
+				out.unshift(out[0]);
 			}
 		}
-
 	});
+	out.reverse();
+	navColors = out;
 	t = t.map(o=>{
 		let out = document.createElement("div");
 		out.innerText = o[0];
@@ -96,6 +103,7 @@ function setMobileTitles(){
 		out.appendChild(span);
 		return out;
 	});
+	t = t.reverse();
 	let mobileNav = document.getElementById("mobile_nav");
 	t.forEach(o=>{mobileNav.appendChild(o)});
 }
