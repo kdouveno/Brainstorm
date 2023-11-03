@@ -27,6 +27,20 @@ body{
 	perspective: 1px;
 	perspective-origin: top;
 }
+@media screen and (min-width: 769px) {
+	#paralax_frame{
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+	#paralax_frame {
+		-ms-overflow-style: initial;  /* IE and Edge */
+		scrollbar-width: initial;  /* Firefox */
+	}
+	#paralax_frame::-webkit-scrollbar {
+		display: initial;
+	}
+}
+
 
 
 

@@ -1,0 +1,38 @@
+<svg width="1080px" height="1080px"
+	 viewBox="-540 -540 1080 1080" version="1.1"
+	 xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink">
+	 <style>
+		.building{
+			fill: blue;
+			stroke: red;
+			stroke-width: 1;
+		}
+		#aPike{
+			offset-rotate: 0deg;
+		}
+		@keyframes tornado_anim{
+			0%{
+				offset-path: path("M 100 500 Q -200 100 0 -500 ");
+			}
+			100%{
+				offset-path: path("M -100 500 Q 200 100 0 -500 ");
+			}
+		}
+		.part{
+			/* offset-path: url("#curve"); */
+			offset-distance: 0%;
+			animation: tornado_anim linear 2s alternate infinite;
+		}
+	 </style>
+	<defs>
+		<path id="curve" d="M 100 500 Q -200 100 0 -500 " style="fill:none; stroke: red; stroke-width: 2"/>
+		<path id="pike" d="M 0 100 L -200 -100 L 200 -100 Z" class="building"/>
+		<path id="bit" d="M 0 -100 Q -50 0 -200 0 Q 0 50 200 0 Q 50 0 0 -100 Z" class="building"/>
+	</defs>
+	<!-- <use xlink:href="#pike" id="aPike" /> -->
+	<use xlink:href="#bit" id="aPike" class="part" style="offset-distance: 10%"/>
+	<use xlink:href="#bit" id="aPike" class="part" style="offset-distance: 15%; transform: scale(1.2)"/>
+	<use xlink:href="#bit" id="aPike" class="part" style="offset-distance: 20%; transform: scale(1.4)"/>
+	<use xlink:href="#bit" id="aPike" class="part" style="offset-distance: 25%; transform: scale(1.6)"/>
+</svg>

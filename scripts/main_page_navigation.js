@@ -1,6 +1,7 @@
 var navColors;
 setMobileTitles();
 
+desk = window.matchMedia("(min-width: 769px)");
 nav = document.querySelectorAll("#mobile_nav div");
 
 pf = document.getElementById("paralax_frame");
@@ -21,6 +22,9 @@ function scrollTo(nbrPanel, a){
 function getNbrPanel() {return ((pf.scrollLeft + window.innerWidth / 2) / window.innerWidth) >> 0};
 function onScroll(){
 	scrollLogos();
+	if (desk.matches)
+		return ;
+	console.log("feur");
 	if (pf.scrollLeft)
 		nbrPanel = getNbrPanel();
 	else
@@ -44,10 +48,16 @@ function onResize(){
 	onScroll();
 }
 function scrollLogos(){
-	for  (const e of wsm){
-		let co = e[0].getBoundingClientRect().left + e[1].ro - window.innerWidth / 2;
-		e[0].style.perspectiveOrigin = (-co + e[1].ro) + "px";
-	}
+	if (desk.matches)
+		for  (const e of wsm){
+			let co = e[0].getBoundingClientRect().top + e[1].ro - window.innerHeight / 2;
+			e[0].style.perspectiveOrigin = "50% " + (-co + e[1].ro) + "px";
+		}
+	else 
+		for  (const e of wsm){
+			let co = e[0].getBoundingClientRect().left + e[1].ro - window.innerWidth / 2;
+			e[0].style.perspectiveOrigin = (-co + e[1].ro) + "px";
+		}
 }
 function resizeLogos(){
 	getWrappersMeta();
