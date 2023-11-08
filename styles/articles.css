@@ -46,6 +46,6 @@ article p{
 		height: initial;
 		min-height: 80vh;
 	}
-	.frame h2, .frame h3{display:initial; padding: 0px 15px}
-
+	.frame:not(#animation) h2, .frame:not(#animation) h3{display:initial; padding: 0px 15px}
+	
 }
