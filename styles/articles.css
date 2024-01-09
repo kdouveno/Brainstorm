@@ -13,13 +13,13 @@
 	overflow: clip;
 	position: relative;
 }
-.frame>div{
+.frame:not(#animation.frame)>div{
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 }
-article{
+article:not(#animation article){
 	margin: 10vw;
 	width: calc(100vw - 20vw);
 	text-align: center;
@@ -29,7 +29,7 @@ article{
 	justify-content: space-around;
 	height: calc(100% - 20vw);
 }
-article>*{
+article:not(#animation article)>*{
 	position: relative;
 }
 article p{

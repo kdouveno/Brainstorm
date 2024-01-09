@@ -2,6 +2,15 @@
 	font-family: "test";
 	src: url("fonts/test.otf");
 }
+body{
+	--nav_height: 10vw;
+}
+@media screen and (min-width: 500px) {
+	body{
+		--nav_height: 50px;
+	}
+}
+
 h1, h2, h3, h4, h5, h6, nav{
 	font-family: "test";
 	letter-spacing: 5px;

@@ -1,15 +1,7 @@
 body{
 	margin: 0px;
 	overflow: hidden;
-	--nav_height: 10vw;
-
 }
-@media screen and (min-width: 500px) {
-	body{
-		--nav_height: 50px
-	}
-}
-
 #paralax_frame{
 	overflow-x: scroll;
 	overflow-y: hidden;
