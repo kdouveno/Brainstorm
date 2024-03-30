@@ -1,6 +1,7 @@
 @media screen and (min-width: 769px) {
 	#animation{
 		--anim-frame-h: calc(100vh - var(--nav_height));
+		--anim-size: min(50vw, var(--anim-frame-h));
 		height: var(--anim-frame-h);
 		justify-content: center;
 	}
@@ -10,17 +11,18 @@
 	}
 	#animation>div>*{
 		position: absolute;
-		height: min(50vw, var(--anim-frame-h));
-		width: min(50vw, var(--anim-frame-h));
+		height: var(--anim-size);
+		width: var(--anim-size);
 		outline: 1px solid red;
 	}
 	article#events{
 		opacity: 0;
 	}
 	article#news{
-		transform: translate(calc(115vw - 2 * min(50vw, var(--anim-frame-h))));
+		outline-color: purple;
+		transform: translate(calc(100vw - 2 * var(--anim-size) * .9));
 	}
 	#anim{
-		transform: translate(calc(110vw - min(50vw, var(--anim-frame-h))));
+		transform: translate(calc(100vw - var(--anim-size) * .9));
 	}
 }
