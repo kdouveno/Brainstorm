@@ -8,22 +8,22 @@
 	#animation>div{
 		height: var(--anim-frame-h);
 		max-height: 50vw;
+		transform: translate(calc(100vw - var(--anim-size) * 1.8));
+		transition: transform 1s cubic-bezier(1,0,0,1);;
+	}
+	#animation.events>div{
+		transform: translate(calc(var(--anim-size) * -1));
 	}
 	#animation>div>*{
 		position: absolute;
 		height: var(--anim-size);
 		width: var(--anim-size);
-		outline: 1px solid red;
-	}
-	#events{
-		transform: translate(100vw);
-	}
-	#news{
-		outline-color: purple;
-		transform: translate(calc(100vw - 2 * var(--anim-size)* .85));
-	}
-	#anim{
-		transform: translate(calc(100vw - var(--anim-size) * .80));
 	}
 
+	#anim{
+		transform: translate(calc(var(--anim-size) * .90));
+	}
+	#events{
+		transform: translate(calc(var(--anim-size) * 1.8));
+	}
 }
