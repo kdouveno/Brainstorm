@@ -15,14 +15,15 @@
 		width: var(--anim-size);
 		outline: 1px solid red;
 	}
-	article#events{
-		opacity: 0;
+	#events{
+		transform: translate(100vw);
 	}
-	article#news{
+	#news{
 		outline-color: purple;
-		transform: translate(calc(100vw - 2 * var(--anim-size) * .9));
+		transform: translate(calc(100vw - 2 * var(--anim-size)* .85));
 	}
 	#anim{
-		transform: translate(calc(100vw - var(--anim-size) * .9));
+		transform: translate(calc(100vw - var(--anim-size) * .80));
 	}
+
 }

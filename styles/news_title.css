@@ -1,0 +1,26 @@
+#news {
+	container-name: news;
+	container-type: size;
+}
+.news_title{
+	display: inline-block;
+	font-size: 1.5em;
+	padding: 25px
+}
+@container news (width < 500px){
+	.news_title{
+		font-size: 1em;
+	}
+}
+@container news (width < 300px){
+	.news_title{
+		font-size: .5em;
+	}
+}
+.news_title h4{
+	font-size: 2em;
+}
+
+.news_title p{
+	text-align: end;
+}

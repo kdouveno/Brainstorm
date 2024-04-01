@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="styles/articles.css">
 	<link rel="stylesheet" href="styles/bg_img.css">
 	<link rel="stylesheet" href="styles/main_frame.css">
+	<link rel="stylesheet" href="styles/news_title.css">
 </head>
 <body onresize="onResize(true)" onready>
 	<div class="upper_frame">
@@ -106,10 +107,19 @@
 				<div class="frame" id="animation">
 					<h2></h2>
 					<div>
-						<article id="news">
+						<div id="news">
 							<h3>WHAT'S NEW</h3>
-							<?xml version="1.0" encoding="utf-8"?>
-						</article>
+							<div id="news_container">
+								<article class="news_title">
+									<h4>
+										News Title
+									</h4>
+									<p>
+										This is the news short desciption
+									</p>
+								</article>
+							</div>
+						</div>
 						<svg id="anim" version="1.1" width="1200px" height="1200px" viewBox="0 0 1200 1200" xmlns="http://www.w3.org/2000/svg" style="stroke: black; stroke-width: 4px; stroke-linejoin: round" >
 							<style>
 								#anim{
