@@ -1,5 +1,5 @@
 .bg_img_wrapper{
-	position: absolute;
+	position: absolute !important;
 	height: 100%;
 	text-align: center;
 	perspective: 1px;

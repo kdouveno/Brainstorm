@@ -1,3 +1,7 @@
+#animation #anim{
+	position: absolute;
+}
+
 @media screen and (min-width: 769px) {
 	#animation{
 		--anim-frame-h: calc(100vh - var(--nav_height));

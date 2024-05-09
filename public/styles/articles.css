@@ -13,13 +13,13 @@
 	overflow: clip;
 	position: relative;
 }
-.frame:not(#animation.frame)>div{
+.frame>div{
 	flex-grow: 1;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 }
-article:not(#animation article){
+article{
 	margin: 10vw;
 	width: calc(100vw - 20vw);
 	text-align: center;
@@ -29,7 +29,7 @@ article:not(#animation article){
 	justify-content: space-around;
 	height: calc(100% - 20vw);
 }
-article:not(#animation article)>*{
+article>*{
 	position: relative;
 }
 article p{
@@ -43,7 +43,7 @@ article p{
 		display: initial;
 	}
 	.frame{
-		height: initial;
+		/* height: initial; */
 		min-height: 80vh;
 	}
 	.frame:not(#animation) h2, .frame:not(#animation) h3{display:initial; padding: 0px 15px}
