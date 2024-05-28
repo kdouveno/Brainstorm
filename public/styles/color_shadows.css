@@ -1,33 +1,45 @@
-.logo_wrapper>svg:first-child, .logo_wrapper>img:first-child{
+
+
+.logo_wrapper>div:first-child>svg, .logo_wrapper>div:first-child>img{
 	z-index: 2;
 }
-.logo_wrapper>svg:nth-child(2){
-	transform: translate3D(62.3px, -67.1px, -.2px);
-	fill: rgb(200, 0, 255);
+.logo_wrapper>div:nth-child(2){
+	transform: translate(62.3px, -191.1px);
 }
-.logo_wrapper>svg:nth-child(3){
-	transform: translate3D(123px, 92px, -.4px);
+.logo_wrapper>div:nth-child(2)>svg{
+	fill: rgb(180, 152, 188);
+}
+.logo_wrapper>div:nth-child(3){
+	transform: translate(123px, -234px);
+}
+.logo_wrapper>div:nth-child(3)>svg{
 	fill: rgb(255 251 0);
 }
-.logo_wrapper>svg:nth-child(4){
-	transform: translate3D(-124px, 41px, -.6px);
+.logo_wrapper>div:nth-child(4){
+	transform: translate(-124px, -359px);
+}
+.logo_wrapper>div:nth-child(4)>svg{
 	fill: rgb(0, 255, 102);
 }
 .logo_wrapper{
 	height: 150px;
 	width: 150px;
-	perspective: 1px;
-    animation-iteration-count: infinite;
-	perspective-origin: 0vw;
+	/* perspective: 1px; */
+    /* animation-iteration-count: infinite; */
+	/* perspective-origin: 0vw; */
 }
-.logo_wrapper>svg, .logo_wrapper>img{
+.logo_wrapper>div{
+	height: 100%;
+	width: 100%;
+}
+.logo_wrapper>div>svg, .logo_wrapper>div>img{
 	position: absolute;
 	left: 0px;
 	height: 100%;
 	width: 100%;
 	/* mix-blend-mode: hard-light; */
 	fill:white;
-	transform-style: preserve-3d;
+	/* transform-style: preserve-3d; */
 	z-index: -1;
 }
 .logo_wrapper.big_one{

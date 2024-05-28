@@ -1,0 +1,17 @@
+.prlx{
+	--prlx-sx: 0px;
+	--prlx-sy: 0px;
+	--prlx-pox: 0px;
+	--prlx-poy: 0px;
+}
+
+.prlx_l1 { --prlx-scale: 0.1 }
+.prlx_l2 { --prlx-scale: 0.2 }
+.prlx_l3 { --prlx-scale: 0.3 }
+.prlx_wrapper>* {
+	transform:	scale(calc(1 - var(--prlx-scale)))
+				translate(
+					calc(var(--prlx-sx) * var(--prlx-scale) + var(--prlx-pox)),
+					calc(var(--prlx-sy) * var(--prlx-scale) + var(--prlx-poy))
+				);
+}
