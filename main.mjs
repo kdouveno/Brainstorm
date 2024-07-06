@@ -1,6 +1,6 @@
-import pg from 'pg'
+import pg from 'pg';
 const { Client } = pg;
-const express = require("express");
+import express from 'express';
 const app = express();
 const port = 3000;
  
@@ -8,7 +8,7 @@ const client = new Client({
   user: 'postgres',
   password: 'abcd',
   host: 'localhost',
-  port: 5334,
+  port: 5432,
   database: 'brainstorm',
 })
 
@@ -16,7 +16,7 @@ const client = new Client({
 client.connect();
 app.set('view engine', 'ejs');
 
-client.query("INSERT INTO table ('title', 'bio') VALUES ('valeur 1', 'valeur 2')");
+client.query("INSERT INTO articles(title, bio) VALUES('valeur 1', 'valeur 2')");
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
